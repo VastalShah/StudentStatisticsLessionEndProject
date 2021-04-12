@@ -49,6 +49,27 @@ namespace StudentStatistics.Controllers
             var ds_avg = students.Average(s => s.Data_Structures_Marks);
             ViewBag.average = dbms_avg.ToString() + "+" + ds_avg.ToString();
 
+            //OrderBy
+            //Maximum DBMS
+            students = students.OrderBy(s => s.DBMS_Marks).ToList();
+            var maxStudentDBMS = students.LastOrDefault();
+            ViewBag.maxDBMS = maxStudentDBMS.Name + "+" + maxStudentDBMS.Age.ToString() + "+" + maxStudentDBMS.DBMS_Marks.ToString();
+
+            //Minimum DBMS
+            students = students.OrderBy(s => s.DBMS_Marks).ToList();
+            var minStudentDBMS = students.FirstOrDefault();
+            ViewBag.minDBMS = minStudentDBMS.Name + "+" + minStudentDBMS.Age.ToString() + "+" + minStudentDBMS.DBMS_Marks.ToString();
+
+            //Maximum DS
+            students = students.OrderBy(s => s.Data_Structures_Marks).ToList();
+            var maxStudentDS = students.LastOrDefault();
+            ViewBag.maxDS = maxStudentDS.Name + "+" + maxStudentDS.Age.ToString() + "+" + maxStudentDS.Data_Structures_Marks.ToString();
+
+            //Minimum DS
+            students = students.OrderBy(s => s.Data_Structures_Marks).ToList();
+            var minStudentDS = students.FirstOrDefault();
+            ViewBag.minDS = minStudentDS.Name + "+" + minStudentDS.Age.ToString() + "+" + minStudentDS.Data_Structures_Marks.ToString();
+
             return View();
         }
 

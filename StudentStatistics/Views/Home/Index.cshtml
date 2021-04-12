@@ -12,6 +12,11 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="row">
+                <div class="col-sm-12">
+                    <h2>Count</h2>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-6">Total Students</div>
                 <div class="col-sm-6">Total Subjects</div>
             </div>
@@ -26,7 +31,7 @@
         </div>
     </div>
 </div>
-
+<br />
 @*Maximum Marks*@
 <div class="container text-center">
     <br />
@@ -108,3 +113,101 @@
         </div>
     </div>
 </div>
+<br />
+
+<div class="container text-center">
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Student Details with Maximum marks in DBMS</h2>
+            <div class="row">
+                <div class="col-sm-4"><b>Name</b></div>
+                <div class="col-sm-4"><b>Age</b></div>
+                <div class="col-sm-4"><b>Marks</b></div>
+            </div>
+            <hr />
+            @{
+                var maxData1 = ViewBag.maxDBMS.Split('+');
+                <div class="row">
+                    <div class="col-sm-4">@maxData1[0]</div>
+                    <div class="col-sm-4">@maxData1[1]</div>
+                    <div class="col-sm-4">@maxData1[2]</div>
+                </div>
+            }
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center">
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Student Details with Minimum marks in DBMS</h2>
+            <div class="row">
+                <div class="col-sm-4"><b>Name</b></div>
+                <div class="col-sm-4"><b>Age</b></div>
+                <div class="col-sm-4"><b>Marks</b></div>
+            </div>
+            <hr />
+            @{
+                var minData1 = ViewBag.minDBMS.Split('+');
+                <div class="row">
+                    <div class="col-sm-4">@minData1[0]</div>
+                    <div class="col-sm-4">@minData1[1]</div>
+                    <div class="col-sm-4">@minData1[2]</div>
+                </div>
+            }
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center">
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Student Details with Maximum marks in Data Structures</h2>
+            <div class="row">
+                <div class="col-sm-4"><b>Name</b></div>
+                <div class="col-sm-4"><b>Age</b></div>
+                <div class="col-sm-4"><b>Marks</b></div>
+            </div>
+            <hr />
+            @{
+                var maxData2 = ViewBag.maxDS.Split('+');
+                <div class="row">
+                    <div class="col-sm-4">@maxData2[0]</div>
+                    <div class="col-sm-4">@maxData2[1]</div>
+                    <div class="col-sm-4">@maxData2[2]</div>
+                </div>
+            }
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center">
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Student Details with Minimum marks in Data Structures</h2>
+            <div class="row">
+                <div class="col-sm-4"><b>Name</b></div>
+                <div class="col-sm-4"><b>Age</b></div>
+                <div class="col-sm-4"><b>Marks</b></div>
+            </div>
+            <hr />
+            @{
+                var minData2 = ViewBag.minDS.Split('+');
+                <div class="row">
+                    <div class="col-sm-4">@minData2[0]</div>
+                    <div class="col-sm-4">@minData2[1]</div>
+                    <div class="col-sm-4">@minData2[2]</div>
+                </div>
+            }
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<br />
