@@ -3,74 +3,105 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <h2>Students All Data</h2>
-</div>
-<div class="container text-center">
-    <br />
-    <div class="row">
-        <div class="col-sm-7">
-            <div class="row">
-                <div class="col-sm-3">Name</div>
-                <div class="col-sm-3">Age</div>
-                <div class="col-sm-3">DBMS</div>
-                <div class="col-sm-3">Data Structures</div>
-            </div>
-            <hr />
-            @{ 
-                List<StudentModel> students = (List<StudentModel>)ViewData["students"];
-                foreach (StudentModel student in students)
-                {
-                    <div class="row">
-                        <div class="col-sm-3">@student.Name</div>
-                        <div class="col-sm-3">@student.Age</div>
-                        <div class="col-sm-3">@student.DBMS_Marks</div>
-                        <div class="col-sm-3">@student.Data_Structures_Marks</div>
-                    </div>
-                }
-            }
-            <div class="clearfix"></div>
-        </div>
-    </div>
+    <h1 class="display-4">Students All Data</h1>
 </div>
 
+@*Total Subjects and Students*@
 <div class="container text-center">
     <br />
     <div class="row">
-        <div class="col-sm-7">
+        <div class="col-sm-12">
             <div class="row">
-                <div class="col-sm-3">Name</div>
-                <div class="col-sm-3">Code</div>
-            </div>
-            <hr />
-            @{
-                List<SubjectModel> subjects = (List<SubjectModel>)ViewData["subjects"];
-                foreach (SubjectModel subject in subjects)
-                {
-                    <div class="row">
-                        <div class="col-sm-3">@subject.Name</div>
-                        <div class="col-sm-3">@subject.Code</div>
-                    </div>
-                }
-            }
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div>
-
-<div class="container text-center">
-    <br />
-    <div class="row">
-        <div class="col-sm-7">
-            <div class="row">
-                <div class="col-sm-3">Total Students</div>
-                <div class="col-sm-3">Total Subjects</div>
+                <div class="col-sm-6">Total Students</div>
+                <div class="col-sm-6">Total Subjects</div>
             </div>
             <hr />
             @{
                 <div class="row">
-                    <div class="col-sm-3">@ViewBag.totalStudents</div>
-                    <div class="col-sm-3">@ViewBag.totalSubjects</div>
+                    <div class="col-sm-6">@ViewBag.totalStudents</div>
+                    <div class="col-sm-6">@ViewBag.totalSubjects</div>
+                </div>
+            }
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+@*Maximum Marks*@
+<div class="container text-center">
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Maximum Marks</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">DBMS</div>
+                <div class="col-sm-6">Data Structures</div>
+            </div>
+            <hr />
+            @{
+                var maxdata = ViewBag.maximum.Split('+');
+                <div class="row">
+                    <div class="col-sm-6">@maxdata[0]</div>
+                    <div class="col-sm-6">@maxdata[1]</div>
+                </div>
+            }
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+
+@*Minimum Marks*@
+<div class="container text-center">
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Minimum Marks</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">DBMS</div>
+                <div class="col-sm-6">Data Structures</div>
+            </div>
+            <hr />
+            @{
+                var mindata = ViewBag.minimum.Split('+');
+                <div class="row">
+                    <div class="col-sm-6">@mindata[0]</div>
+                    <div class="col-sm-6">@mindata[1]</div>
+                </div>
+            }
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+@*Average Marks*@
+<div class="container text-center">
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Average Marks</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6"><b>DBMS</b></div>
+                <div class="col-sm-6"><b>Data Structures</b></div>
+            </div>
+            <hr />
+            @{
+                var avgdata = ViewBag.average.Split('+');
+                <div class="row">
+                    <div class="col-sm-6">@avgdata[0]</div>
+                    <div class="col-sm-6">@avgdata[1]</div>
                 </div>
             }
             <div class="clearfix"></div>

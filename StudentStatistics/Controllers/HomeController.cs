@@ -28,10 +28,27 @@ namespace StudentStatistics.Controllers
             subjects = new Data().GetAllSubjects();
             ViewData["subjects"] = subjects;
 
+            //Count of Students and Subjects
             var studentCount = students.Count();
             var subjectCount = subjects.Count();
             ViewBag.totalStudents = studentCount;
             ViewBag.totalSubjects = subjectCount;
+
+            //Max Marks for each subjects
+            var dbms_max = students.Max(s => s.DBMS_Marks);
+            var ds_max = students.Max(s => s.Data_Structures_Marks);
+            ViewBag.maximum = dbms_max.ToString() + "+" + ds_max.ToString();
+
+            //Min Marks for each subjects
+            var dbms_min = students.Min(s => s.DBMS_Marks);
+            var ds_min = students.Min(s => s.Data_Structures_Marks);
+            ViewBag.minimum = dbms_min.ToString() + "+" + ds_min.ToString();
+
+            //Average Marks for each subjects
+            var dbms_avg = students.Average(s => s.DBMS_Marks);
+            var ds_avg = students.Average(s => s.Data_Structures_Marks);
+            ViewBag.average = dbms_avg.ToString() + "+" + ds_avg.ToString();
+
             return View();
         }
 
